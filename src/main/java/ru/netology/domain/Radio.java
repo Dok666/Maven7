@@ -49,31 +49,16 @@ public class Radio {
         return soundVolume;
     }
 
-    public void riseInSound(){                        //Повышение уровня звука
-        if(soundVolume < 10){
-            soundVolume = soundVolume + 1;
-        }
-    }
-
-    public void loweringTheSoundLevel(){               //Понижение уровня звука
-       if(soundVolume <= 10){
-           soundVolume = soundVolume - 1;
-
-       }
-    }
-
-    public void maxVolume(){                          //Максимальный звук
-        if (soundVolume == 10){
+    public void maxVolume() {                          //Максимальный звук
+        if (soundVolume == 10) {
             soundVolume = 10;
         }
     }
 
-    public void minVolume(){                         // Минимальный звук
-        if(soundVolume == 0){
+    public void minVolume() {                         // Минимальный звук
+        if (soundVolume == 0) {
             soundVolume = 0;
         }
     }
-
-
 }
 
