@@ -2,8 +2,18 @@ package ru.netology.domain;
 
 public class Radio {
 
-    private int currentRadioStationNumber;
-    private int soundVolume;
+    private int numberOfRadioStations;    //Колиество радиостанций
+    private int currentRadioStationNumber;   // Номер радиостанции
+    private int soundVolume;// Громкость звука
+
+
+
+    public Radio(int numberOfRadioStations) {
+        this.numberOfRadioStations = numberOfRadioStations;
+    }
+
+    public Radio() {
+    }
 
     public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
         if (currentRadioStationNumber < 0) {
@@ -17,6 +27,16 @@ public class Radio {
 
     public int getCurrentRadioStationNumber() {
         return currentRadioStationNumber;
+    }
+
+    public int getNumberOfRadioStations() {
+        return numberOfRadioStations;
+    }
+
+    public void setNumberOfRadioStations(int numberOfRadioStations) {
+        if(numberOfRadioStations < 0)
+            return;
+        this.numberOfRadioStations = numberOfRadioStations;
     }
 
     public void next() {
@@ -36,7 +56,7 @@ public class Radio {
     }
 
     public void setSoundVolume(int soundVolume) {
-        if (soundVolume > 10) {
+        if (soundVolume > 100) {
             return;
         }
         if (soundVolume < 0) {
@@ -50,8 +70,8 @@ public class Radio {
     }
 
     public void maxVolume() {                          //Максимальный звук
-        if (soundVolume == 10) {
-            soundVolume = 10;
+        if (soundVolume == 100) {
+            soundVolume = 100;
         }
     }
 
