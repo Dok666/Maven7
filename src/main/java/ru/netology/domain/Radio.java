@@ -7,13 +7,14 @@ public class Radio {
     private int soundVolume;// Громкость звука
 
 
-
     public Radio(int numberOfRadioStations) {
         this.numberOfRadioStations = numberOfRadioStations;
     }
 
     public Radio() {
+
     }
+
 
     public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
         if (currentRadioStationNumber < 0) {
@@ -34,7 +35,7 @@ public class Radio {
     }
 
     public void setNumberOfRadioStations(int numberOfRadioStations) {
-        if(numberOfRadioStations < 0)
+        if (numberOfRadioStations < 0)
             return;
         this.numberOfRadioStations = numberOfRadioStations;
     }

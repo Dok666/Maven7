@@ -5,23 +5,23 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     Radio radio = new Radio();
-    Radio radio1 = new Radio();
+    Radio radio1 = new Radio(200);
 
     @Test
     void numberOfRadioStations() {
-        radio1.setNumberOfRadioStations(5);
+        radio.setNumberOfRadioStations(1);
 
-        int actual = radio1.getNumberOfRadioStations();
-        int expected = 5;
+        int actual = radio.getNumberOfRadioStations();
+        int expected = 1;
 
         Assertions.assertEquals(expected,actual);
     }
 
     @Test
     void numberOfRadioStations1() {
-        radio1.setNumberOfRadioStations(0);
+        radio.setNumberOfRadioStations(0);
 
-        int actual = radio1.getNumberOfRadioStations();
+        int actual = radio.getNumberOfRadioStations();
         int expected = 0;
 
         Assertions.assertEquals(expected,actual);
@@ -29,9 +29,9 @@ public class RadioTest {
 
     @Test
     void numberOfRadioStations2() {
-        radio1.setNumberOfRadioStations(-1);
+        radio.setNumberOfRadioStations(-1);
 
-        int actual = radio1.getNumberOfRadioStations();
+        int actual = radio.getNumberOfRadioStations();
         int expected = 0;
 
         Assertions.assertEquals(expected,actual);
@@ -39,9 +39,9 @@ public class RadioTest {
 
     @Test
     void numberOfRadioStations3() {
-        radio1.setNumberOfRadioStations(100);
+        radio.setNumberOfRadioStations(100);
 
-        int actual = radio1.getNumberOfRadioStations();
+        int actual = radio.getNumberOfRadioStations();
         int expected = 100;
 
         Assertions.assertEquals(expected,actual);
@@ -49,10 +49,10 @@ public class RadioTest {
 
     @Test
     void numberOfRadioStations4() {
-        radio1.setNumberOfRadioStations(9);
+        radio.setNumberOfRadioStations(101);
 
-        int actual = radio1.getNumberOfRadioStations();
-        int expected = 9;
+        int actual = radio.getNumberOfRadioStations();
+        int expected = 101;
 
         Assertions.assertEquals(expected,actual);
     }
