@@ -18,6 +18,17 @@ public class RadioTest {
         Assertions.assertEquals(expected,actual);
     }
 
+    @Test
+    void numberOfRadioStations01() {
+        Radio radio1 = new Radio(20);
+        radio1.setCurrentRadioStationNumber1(20);
+
+        int actual = radio1.getCurrentRadioStationNumber1();
+        int expected = 20;
+
+        Assertions.assertEquals(expected,actual);
+    }
+
 
     @Test
     void numberOfRadioStations() {
