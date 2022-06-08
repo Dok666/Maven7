@@ -10,10 +10,10 @@ public class RadioTest {
     @Test
     void numberOfRadioStations0() {
         Radio radio1 = new Radio(20);
-        radio1.setCurrentRadioStationNumber1(30);
+        radio1.setCurrentRadioStationNumber1(15);
 
         int actual = radio1.getCurrentRadioStationNumber1();
-        int expected = 0;
+        int expected = 15;
 
         Assertions.assertEquals(expected,actual);
     }
@@ -25,6 +25,17 @@ public class RadioTest {
 
         int actual = radio1.getCurrentRadioStationNumber1();
         int expected = 20;
+
+        Assertions.assertEquals(expected,actual);
+    }
+
+    @Test
+    void numberOfRadioStations02() {
+        Radio radio1 = new Radio(20);
+        radio1.setCurrentRadioStationNumber1(30);
+
+        int actual = radio1.getCurrentRadioStationNumber1();
+        int expected = 0;
 
         Assertions.assertEquals(expected,actual);
     }
