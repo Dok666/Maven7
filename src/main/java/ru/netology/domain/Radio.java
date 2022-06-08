@@ -4,24 +4,13 @@ public class Radio {
 
     private int numberOfRadioStations;    //Колиество радиостанций
     private int currentRadioStationNumber;    // Номер текущей радиостанции
-
-    private int currentRadioStationNumber1;
     private int soundVolume;// Громкость звука
 
-    public int getCurrentRadioStationNumber1() {
-        return currentRadioStationNumber1;
-    }
-
-    public void setCurrentRadioStationNumber1(int currentRadioStationNumber1) {
-        if(currentRadioStationNumber1 > numberOfRadioStations)
-            return;
-        this.currentRadioStationNumber1 = currentRadioStationNumber1;
-    }
 
     public Radio(int numberOfRadioStations) {
         this.numberOfRadioStations = numberOfRadioStations;
-
     }
+
 
     public Radio() {
 
@@ -32,7 +21,7 @@ public class Radio {
         if (currentRadioStationNumber < 0) {
             return;
         }
-        if (currentRadioStationNumber > 9 ) {
+        if (currentRadioStationNumber > numberOfRadioStations) {
             return;
         }
         this.currentRadioStationNumber = currentRadioStationNumber;
@@ -53,7 +42,7 @@ public class Radio {
     }
 
     public void next() {
-        if (currentRadioStationNumber == 9) {
+        if (currentRadioStationNumber == numberOfRadioStations) {
             currentRadioStationNumber = 0;
         } else {
             currentRadioStationNumber = currentRadioStationNumber + 1;
@@ -62,7 +51,7 @@ public class Radio {
 
     public void prev() {
         if (currentRadioStationNumber == 0) {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = numberOfRadioStations;
         } else {
             currentRadioStationNumber = currentRadioStationNumber - 1;
         }
