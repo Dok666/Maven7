@@ -2,14 +2,26 @@ package ru.netology.domain;
 
 public class Radio {
 
-    private int currentRadioStationNumber;
-    private int soundVolume;
+    private int numberOfRadioStations;    //Колиество радиостанций
+    private int currentRadioStationNumber;    // Номер текущей радиостанции
+    private int soundVolume;// Громкость звука
+
+
+    public Radio(int numberOfRadioStations) {
+        this.numberOfRadioStations = numberOfRadioStations;
+    }
+
+
+    public Radio() {
+
+    }
+
 
     public void setCurrentRadioStationNumber(int currentRadioStationNumber) {
         if (currentRadioStationNumber < 0) {
             return;
         }
-        if (currentRadioStationNumber > 9) {
+        if (currentRadioStationNumber > numberOfRadioStations) {
             return;
         }
         this.currentRadioStationNumber = currentRadioStationNumber;
@@ -19,8 +31,18 @@ public class Radio {
         return currentRadioStationNumber;
     }
 
+    public int getNumberOfRadioStations() {
+        return numberOfRadioStations;
+    }
+
+    public void setNumberOfRadioStations(int numberOfRadioStations) {
+        if (numberOfRadioStations < 0)
+            return;
+        this.numberOfRadioStations = numberOfRadioStations;
+    }
+
     public void next() {
-        if (currentRadioStationNumber == 9) {
+        if (currentRadioStationNumber == numberOfRadioStations) {
             currentRadioStationNumber = 0;
         } else {
             currentRadioStationNumber = currentRadioStationNumber + 1;
@@ -29,14 +51,14 @@ public class Radio {
 
     public void prev() {
         if (currentRadioStationNumber == 0) {
-            currentRadioStationNumber = 9;
+            currentRadioStationNumber = numberOfRadioStations;
         } else {
             currentRadioStationNumber = currentRadioStationNumber - 1;
         }
     }
 
     public void setSoundVolume(int soundVolume) {
-        if (soundVolume > 10) {
+        if (soundVolume > 100) {
             return;
         }
         if (soundVolume < 0) {
@@ -50,8 +72,8 @@ public class Radio {
     }
 
     public void maxVolume() {                          //Максимальный звук
-        if (soundVolume == 10) {
-            soundVolume = 10;
+        if (soundVolume == 100) {
+            soundVolume = 100;
         }
     }
 
